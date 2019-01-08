@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center>
+<br>
+	Input Number
+<br>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+</center>
+</head>
+<body>
+
+<center>
+
+	<input type="number" placeholer="0" id="ndisplay">
+	<br>
+	<br>
+	<button onclick="attachNumber(this)">1</button>
+	<button onclick="attachNumber(this)">2</button>
+	<button onclick="attachNumber(this)">3</button>
+	<button onclick="attachNumber(this)">4</button>
+	<button onclick="attachNumber(this)">5</button>
+	</br>
+	
+	<br>
+	<button onclick="attachNumber(this)">6</button>
+	<button onclick="attachNumber(this)">7</button>
+	<button onclick="attachNumber(this)">8</button>
+	<button onclick="attachNumber(this)">9</button>
+	<button onclick="attachNumber(this)">10</button>
+	</br>
+	
+	<br>
+	<button id="nplus" onclick="doAdd()">+</button>
+	<button id="nequal" onclick="result()">=</button>
+    </br>
+	
+
+	<script type="text/javascript">
+		let n = document.getElementById('ndisplay');
+		let numberHolder;
+		let optr;
+
+		function attachNumber(e){
+			n.value += e.innerHTML;
+		}
+
+		function doAdd(){
+			optr = "+";
+			numberHolder = parseInt(n.value);
+			n.value = "";
+		}
+
+
+		function result(){
+			switch (optr){
+				case "+":
+						n.value = numberHolder + parseInt(n.value);
+						break;
+				
+				default:
+						console.log('no operator defined');
+						break;
+
+			}
+		}
+	</script>
+</center>
+</body>
+</html> 
